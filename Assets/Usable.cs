@@ -17,12 +17,17 @@ public class Usable : Item {
         if (uses < maxUses)
         {
             uses++;
+            Debug.Log(UseText());
+        }
+        else
+        {
+            Debug.Log(NoUsesRemainingText());
         }
     }
 
     public string UseText()
     {
-        return "You ate a " + ("") ;
+        return "You ate a " + displayName;
     }
     
     public string NoUsesRemainingText()

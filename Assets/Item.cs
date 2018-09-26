@@ -8,6 +8,13 @@ public class Item : MonoBehaviour {
     public float weight;
     public float cost;
 
+    private SpriteRenderer sr;
+
+    public void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
     public float GetPricePerWeight()
     {
         return cost / weight;
@@ -21,5 +28,10 @@ public class Item : MonoBehaviour {
     public void OnMouseEnter()
     {
         Debug.Log(ToString());
+    }
+
+    public void OnMouseExit()
+    {
+        sr.color = new Color(0.5f, 0f, 0f);
     }
 }
